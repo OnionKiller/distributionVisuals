@@ -1,4 +1,3 @@
 @ECHO OFF
 rem ed 'D:\Program Files\MATLAB\R2020a\bin' - already part of PATH
-copy ..\Pretty_visuals.mlx .\PrettyVisuals.mlx
-matlab -batch "matlab.internal.liveeditor.openAndConvert('PrettyVisuals.mlx','PrettyPrinted.m');exit"
+FOR %%I in (.\interactive\*) DO matlab -batch "matlab.internal.liveeditor.openAndConvert('%%I','%%~nI.m');exit"
